@@ -60,21 +60,25 @@ root@archiso ~ # arch-chroot /mnt
 [root@archiso /]# hwclock --systohc
 
 [root@archiso /]# nano /etc/locale.gen
-```
 Uncomment en_US.UTF-8 UTF-8
+```
+
 ```bash
 [root@archiso /]# locale-gen
 [root@archiso /]# nano /etc/locale.conf
-```
 Write LANG=en_US.UTF-8
+```
+
 ```bash
 [root@archiso /]# nano /etc/vconsole.conf
-```
 Write KEYMAP=us
+```
+
 ```bash
 [root@archiso /]# nano /etc/hostname
-```
 Write **hostname**
+```
+
 
 ```bash
 [root@archiso /]# passwd
@@ -82,14 +86,15 @@ Write **hostname**
 [root@archiso /]# passwd chazzybear
 
 [root@archiso /]# EDITOR=nano visudo
-```
 Uncomment %wheel ALL=(ALL) ALL
+```
+
 
 ```bash
 [root@archiso /]# systemctl enable NetworkManager
 ```
 
-### Bootloader
+#### Bootloader
 ```bash
 [root@archiso /]# grub-install /dev/nvme0n1
 [root@archiso /]# grub-mkconfig -o /boot/grub/grub.cfg
@@ -108,8 +113,15 @@ Uncomment %wheel ALL=(ALL) ALL
 [chazzybear@arch ~]$ sudo pacman -S konsole firefox kate
 
 [chazzybear@arch ~]$ sudo systemctl enable lightdm
+[chazzybear@arch ~]$ sudo pacman -S alsa-firmware (sound card driver)
 ```
 
+### Setting up GPU drivers
+
+```bash
+[chazzybear@arch ~]$ lspci -k | grep -A 2 -E "(VGA|3D)"
+[chazzybear@arch ~]$ sudo pacman -S nvidia-open
+```
 
 
 
