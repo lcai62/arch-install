@@ -123,7 +123,15 @@ Uncomment %wheel ALL=(ALL) ALL
 [chazzybear@arch ~]$ sudo pacman -S nvidia-open
 ```
 
-
+### Programs
+NZXT Cam
+Code
+Notion
+Firefox
+qBittorrent
+osu!
+Discord
+Spotify
 
 
 
